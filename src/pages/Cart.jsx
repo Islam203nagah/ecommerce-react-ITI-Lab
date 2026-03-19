@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import OrderSummary from "@/components/ui/OrderSumary";
+import OrderSummary from "@/components/ui/OrderSummary";
 import CartCard from "@/components/ui/CartCard";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { useAuthStore, useThemeStore } from "@/store/useThemeStore";
