@@ -1,7 +1,7 @@
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import CustomerReview from "@/components/ui/CustomerReview";
-import DetailsPro from "@/components/ui/DetailsPro";
-import SummaryReview from "@/components/ui/summaryReview";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import CustomerReview from "../components/ui/CustomerReview";
+import DetailsPro from "../components/ui/DetailsPro";
+import SummaryReview from "../components/ui/summaryReview";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 

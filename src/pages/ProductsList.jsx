@@ -1,10 +1,10 @@
 import { useState } from "react"
-import ProductCard from "@/components/ui/ProductCard"
-import ProductFilter from "@/components/ui/ProductFilter"
-import Breadcrumb from "@/components/ui/Breadcrumb"
+import ProductCard from "../components/ui/ProductCard"
+import ProductFilter from "../components/ui/ProductFilter"
+import Breadcrumb from "../components/ui/Breadcrumb"
 import { useSearchParams } from "react-router"
-import Pagination from "@/components/ui/Pagination"
-import { useThemeStore } from "@/store/useThemeStore"
+import Pagination from "../components/ui/Pagination"
+import { useThemeStore } from "../store/useThemeStore"
 
 export default function ProductsList({ products }) {
   const theme=useThemeStore((state)=>(state.theme));

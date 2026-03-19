@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "./button"
 
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1)

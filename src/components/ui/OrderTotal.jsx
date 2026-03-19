@@ -1,4 +1,4 @@
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "./separator";
 import { useSelector } from "react-redux";
 
 const OrderTotal = () => {

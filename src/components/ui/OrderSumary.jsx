@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-} from "@/components/ui/card";
+} from "./card";
 import { useThemeStore } from "@/store/useThemeStore";
 
 

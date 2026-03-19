@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./button";
 import { Trash2 } from "lucide-react";
 import { useSelector,useDispatch } from "react-redux";
 import { useThemeStore } from "@/store/useThemeStore";

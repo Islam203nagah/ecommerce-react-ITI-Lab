@@ -1,5 +1,5 @@
 import { Github, Facebook, Twitter } from "lucide-react"
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "./separator"
 import { useThemeStore } from "@/store/useThemeStore";
 
 export default function Footer() {

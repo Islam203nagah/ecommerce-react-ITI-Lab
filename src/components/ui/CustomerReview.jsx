@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Avatar } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardContent } from "./card";
+import { Avatar } from "./avatar";
+import { Badge } from "./badge";
 import { Star } from "lucide-react";
 
 const CustomerReview = ({ product }) => {

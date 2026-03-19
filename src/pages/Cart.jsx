@@ -1,8 +1,8 @@
-// import React, { useState } from "react";
-import OrderSummary from "@/components/ui/OrderSummary";
-import CartCard from "@/components/ui/CartCard";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import { useAuthStore, useThemeStore } from "@/store/useThemeStore";
+
+import OrderSummary from "../components/ui/OrderSumary";
+import CartCard from "../components/ui/CartCard";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import { useAuthStore, useThemeStore } from "../store/useThemeStore";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 

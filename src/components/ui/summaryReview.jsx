@@ -4,8 +4,8 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-} from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+} from "./card";
+import { Progress } from "./progress";
 import { Star } from "lucide-react";
 
 const SummaryReview = ({ product }) => {

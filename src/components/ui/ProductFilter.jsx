@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "./button"
 import { useSearchParams } from "react-router"
 
 export default function ProductFilter({ categories, onFilter }) {

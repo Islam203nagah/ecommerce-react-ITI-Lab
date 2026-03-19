@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card"
+import { Button } from "./button"
 import { ShoppingCart } from "lucide-react"
 import { useNavigate } from "react-router"
 import { useThemeStore } from "@/store/useThemeStore";

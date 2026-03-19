@@ -5,7 +5,7 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu"
+} from "./navigation-menu"
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Sun03Icon , Moon02Icon } from "@hugeicons/core-free-icons/index";
 import { Logout03Icon} from "@hugeicons/core-free-icons/index";
