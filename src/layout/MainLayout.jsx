@@ -1,6 +1,6 @@
 import Footer from '../components/ui/footer';
 import Navbar from '../components/ui/Navbar';
-import { useThemeStore } from '../store/useThemeStore';
+import { useThemeStore } from '@/store/useThemeStore';
 import React from 'react'
 import { Outlet } from 'react-router';
 function MainLayout () {
