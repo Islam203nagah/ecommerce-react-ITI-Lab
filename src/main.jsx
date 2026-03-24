@@ -12,6 +12,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { LoginForm } from './pages/login-form';
+import AdminPanel from './pages/AdminPanel';
 
 // import HomePage from './pages/HomePage';
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: '/cart',
         element: <Cart />,
       },
+      {
+        path: '/admin',
+       element: <AdminPanel />
+      }
     ]
 
 	},

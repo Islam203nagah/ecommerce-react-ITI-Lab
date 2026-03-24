@@ -18,6 +18,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { useAuthStore } from "../store/useThemeStore"
+import { useNavigate } from "react-router"
 
 export function LoginForm({
   
@@ -25,6 +26,7 @@ export function LoginForm({
   ...props
 }) {
   const { login } = useAuthStore()
+  const navigate = useNavigate();
   
   const loginSchema = z.object({
     email: z.string().email("Invalid email address"),
@@ -44,9 +46,10 @@ export function LoginForm({
     login(fakeToken);
     localStorage.setItem("token", fakeToken);
     alert("Login successful!");
+    navigate("/");
   };
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn("flex flex-col gap-6 w-90 mx-auto my-8", className)} {...props}>
       <Card>
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>

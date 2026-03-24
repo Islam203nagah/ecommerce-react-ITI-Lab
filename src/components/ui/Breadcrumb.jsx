@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 export default function Breadcrumb({ items }) {
   return (
-    <nav className="text-sm breadcrumbs mb-4">
+    <nav className="text-sm breadcrumbs mb-4 px-3">
       <ol className="flex items-center gap-1">
         {items.map((item, idx) => (
           <li key={idx} className="flex items-center">

@@ -11,7 +11,7 @@ function Cart() {
     const theme=useThemeStore((state)=>(state.theme));
     const  login  = useAuthStore(state => (state.token));
     
-    if (!login) {
+    if (!login&&localStorage.getItem("token")===null) {
         return <Navigate to="/login" replace />;
     }
 

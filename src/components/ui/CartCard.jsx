@@ -1,11 +1,9 @@
 import React from 'react';
-import { HugeiconsIcon } from '@hugeicons/react';
-import { Delete02Icon } from '@hugeicons/core-free-icons/index';
-import { MinusSignSquareIcon } from '@hugeicons/core-free-icons/index';
-import { PlusSignSquareIcon} from '@hugeicons/core-free-icons/index';
+
 import { Card } from './card'
 import { useDispatch, useSelector } from 'react-redux';
 import { incrementQuantity, decrementQuantity, removeFromCart } from '@/store/cartSlice';
+import { Trash2 , SquarePlus, SquareMinus } from 'lucide-react';
 const CartCard = ({ item}) => {
     const cartItems = useSelector((state) => state.cartItems);
     const dispatch = useDispatch();
@@ -22,24 +20,24 @@ const CartCard = ({ item}) => {
                         <p className='text-muted-foreground text-2xl'>Quantity: {item.quantity}</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <HugeiconsIcon
+                        <SquareMinus
                             onClick={() => dispatch(decrementQuantity(item))}
-                            icon={MinusSignSquareIcon}
+                            
                             className="cursor-pointer text-red-500"
                         />
                         <span className='font-bold'>{item.quantity}</span>
-                        <HugeiconsIcon
+                        <SquarePlus
                             onClick={() => dispatch(incrementQuantity(item))}
-                            icon={PlusSignSquareIcon}
+                            
                             className="cursor-pointer text-red-500"
                         />
                     </div>
                 </div>
             </div>
             <div className="cart-card__actions">
-                <HugeiconsIcon
+                <Trash2
           onClick={() => {  dispatch(removeFromCart(item.id)); alert(`${item.title} removed from cart!`)}}
-          icon={Delete02Icon}
+          
           className="cursor-pointer text-red-500"
         />
                     

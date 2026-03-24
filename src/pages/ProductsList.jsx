@@ -26,21 +26,21 @@ export default function ProductsList({ products }) {
 
   const categories = [...new Set(products.map((p) => p.category))]
 
-  const handleAddToCart = (product) => {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+//   const handleAddToCart = (product) => {
+//   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  const existingProduct = cart.find((item) => item.id === product.id);
+//   const existingProduct = cart.find((item) => item.id === product.id);
 
-  if (existingProduct) {
-    existingProduct.quantity += 1;
-  } else {
-    cart.push({ ...product, quantity: 1 });
-  }
+//   if (existingProduct) {
+//     existingProduct.quantity += 1;
+//   } else {
+//     cart.push({ ...product, quantity: 1 });
+//   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+//   localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert(`${product.title} added to cart!`);
-};
+//   alert(`${product.title} added to cart!`);
+// };
   const items = [
     { label: "Home", to: "/" },
     { label: `${searchParams.get("q") || "All"}`, to: "/" }
