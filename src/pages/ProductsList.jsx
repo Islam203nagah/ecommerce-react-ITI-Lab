@@ -9,6 +9,9 @@ import { useThemeStore } from "../store/useThemeStore"
 
 export default function ProductsList() {
   const theme=useThemeStore((state)=>(state.theme));
+  
+  const [products, setProducts] = useState([])
+  const [filtered, setFiltered] = useState([])
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -22,9 +25,6 @@ export default function ProductsList() {
 
     fetchProducts();
   }, []);
-
-  const [products, setProducts] = useState([])
-  const [filtered, setFiltered] = useState(products)
   const [searchParams] = useSearchParams()
   const [currentPage, setCurrentPage] = useState(1)
   const productsPerPage = 8
