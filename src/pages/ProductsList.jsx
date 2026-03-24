@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProductCard from "../components/ui/ProductCard"
 import ProductFilter from "../components/ui/ProductFilter"
 import Breadcrumb from "../components/ui/Breadcrumb"
@@ -6,8 +6,24 @@ import { useSearchParams } from "react-router"
 import Pagination from "../components/ui/Pagination"
 import { useThemeStore } from "../store/useThemeStore"
 
-export default function ProductsList({ products }) {
+
+export default function ProductsList() {
   const theme=useThemeStore((state)=>(state.theme));
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products");
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const [products, setProducts] = useState([])
   const [filtered, setFiltered] = useState(products)
   const [searchParams] = useSearchParams()
   const [currentPage, setCurrentPage] = useState(1)
