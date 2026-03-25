@@ -4,7 +4,7 @@ import ProductsList from "./pages/ProductsList";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-import LoginForm from "./pages/LoginForm";
+import { LoginForm } from "./pages/LoginForm";
 import AdminPanel from "./pages/AdminPanel";
 
 function App() {
