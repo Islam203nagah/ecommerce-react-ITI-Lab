@@ -18,8 +18,11 @@ export default function ProductsList() {
         const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
         setProducts(data);
+        setFiltered(data); // 🔥 الحل
       } catch (error) {
-        console.error("Error fetching products:", error);
+          console.error("Error fetching products:", error);
+          setProducts([]);
+          setFiltered([]);
       }
     };
 
