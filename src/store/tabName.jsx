@@ -1,9 +1,7 @@
 import { create } from 'zustand';
-export const useTabName = create((set) => ({
+export const useTabName = create(set => ({
+    tabName: 'dashboard',
 
-    tabName: "dashboard",
-
-
-    setTabName: (newTabName) => set({ tabName: newTabName }),
-
+    setTabName: newTabName => set({ tabName: newTabName }),
+    
 }));

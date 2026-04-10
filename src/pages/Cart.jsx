@@ -1,17 +1,16 @@
-
-import OrderSummary from "../components/ui/OrderSumary";
-import CartCard from "../components/ui/CartCard";
-import Breadcrumb from "../components/ui/Breadcrumb";
-import { useAuthStore, useThemeStore } from "../store/useThemeStore";
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import OrderSummary from '../components/ui/OrderSumary';
+import CartCard from '../components/ui/CartCard';
+import Breadcrumb from '../components/ui/Breadcrumb';
+import { useAuthStore, useThemeStore } from '../store/useThemeStore';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 function Cart() {
-    const cartItems = useSelector((state) => state.cart.cartItems);
-    const theme=useThemeStore((state)=>(state.theme));
-    const  login  = useAuthStore(state => (state.token));
-    
-    if (!login&&localStorage.getItem("token")===null) {
+    const cartItems = useSelector(state => state.cart.cartItems);
+    const theme = useThemeStore(state => state.theme);
+    const login = useAuthStore(state => state.token);
+
+    if (!login && localStorage.getItem('token') === null) {
         return <Navigate to="/login" replace />;
     }
 
@@ -21,7 +20,7 @@ function Cart() {
 
     // const onRemove = (itemId) => {
     //     const updatedCart = cartItems.filter((item) => item.id !== itemId);
-       
+
     //     setCartItems(updatedCart);
     //     localStorage.setItem("cart", JSON.stringify(updatedCart));
 
@@ -51,28 +50,35 @@ function Cart() {
     //     setCartItems(updatedCart);
     //     localStorage.setItem("cart", JSON.stringify(updatedCart));
     //     };
-    const items = [
-        { label: "Home", to: "/" },
-        { label: "Cart" }
-    ];
+    const items = [{ label: 'Home', to: '/' }, { label: 'Cart' }];
 
     return (
-        < div style={theme === "light" ? { backgroundColor: "#fff", color: "#000" } : { backgroundColor: "#333", color: "#fff" }} className="min-h-screen">
-        <Breadcrumb items={items} />
-        <div className="p-6 flex flex-col md:flex-row gap-6">
-        <div className="flex-1 space-y-4">
-            {cartItems.length === 0? (
-            <p className="text-muted-foreground">Your cart is empty</p>
-            ) : (
-            cartItems.map((item) => (
-                <CartCard key={item.id} item={item}/>
-            ))
-            )}
-        </div>
+        <div
+            style={
+                theme === 'light'
+                    ? { backgroundColor: '#fff', color: '#000' }
+                    : { backgroundColor: '#333', color: '#fff' }
+            }
+            className="min-h-screen"
+        >
+            <Breadcrumb items={items} />
+            <div className="p-6 flex flex-col md:flex-row gap-6">
+                <div className="flex-1 space-y-4">
+                    {cartItems.length === 0 ? (
+                        <p className="text-muted-foreground">
+                            Your cart is empty
+                        </p>
+                    ) : (
+                        cartItems.map(item => (
+                            <CartCard key={item.id} item={item} />
+                        ))
+                    )}
+                </div>
 
-        <OrderSummary items={cartItems} />
+                <OrderSummary items={cartItems} />
+            </div>
         </div>
-    </div>);
+    );
 }
 
 export default Cart;

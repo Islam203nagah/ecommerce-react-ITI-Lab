@@ -17,17 +17,14 @@ import { store } from './store/store';
 
 // import HomePage from './pages/HomePage';
 
-
-
-
 createRoot(document.getElementById('root')).render(
-  <LanguageProvider>
-    <Provider store={store}>
-      <StrictMode>
-        <HashRouter>
-          <App /> 
-        </HashRouter>
-      </StrictMode>
-    </Provider>
-  </LanguageProvider>
+    <LanguageProvider>
+        <Provider store={store}>
+            <StrictMode>
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </StrictMode>
+        </Provider>
+    </LanguageProvider>
 );

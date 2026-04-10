@@ -1,12 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function ThemeProvider() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return <div></div>;
 }
 
-export default ThemeProvider
-
+export default ThemeProvider;

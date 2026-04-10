@@ -1,34 +1,52 @@
 import React from 'react';
 
-import { Card } from './card'
+import { Card } from './card';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementQuantity, decrementQuantity, removeFromCart } from '@/store/cartSlice';
-import { Trash2 , SquarePlus, SquareMinus } from 'lucide-react';
-const CartCard = ({ item}) => {
-    const cartItems = useSelector((state) => state.cartItems);
+import {
+    incrementQuantity,
+    decrementQuantity,
+    removeFromCart,
+} from '@/store/cartSlice';
+import { Trash2, SquarePlus, SquareMinus } from 'lucide-react';
+import { toast } from 'sonner';
+const CartCard = ({ item }) => {
+    const cartItems = useSelector(state => state.cartItems);
     const dispatch = useDispatch();
     return (
         <Card className="cart-card flex-row items-center justify-between gap-4 p-4">
             <div className="flex items-center gap-4">
                 <div className="cart-card__image">
-                    <img src={item.image} alt={item.title} width={80} height={80} />
+                    <img
+                        src={item.thumbnail}
+                        alt={item.title}
+                        width={80}
+                        height={80}
+                    />
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="cart-card__details">
-                        <h3 className='text-lg font-bold'>{item.title}</h3>
-                        <p className='text-cyan-300 text-xl'>Price: ${item.price}</p>
-                        <p className='text-muted-foreground text-2xl'>Quantity: {item.quantity}</p>
+                        <h3 className="text-lg font-bold">{item.title}</h3>
+                        <p className="text-cyan-300 text-xl">
+                            Price: ${item.price}
+                        </p>
+                        <p className="text-muted-foreground text-2xl">
+                            Quantity: {item.quantity}
+                        </p>
                     </div>
                     <div className="flex items-center gap-4">
                         <SquareMinus
-                            onClick={() => dispatch(decrementQuantity(item))}
-                            
+                            onClick={() => {dispatch(decrementQuantity(item));toast.success("Decrement By one",{style: {
+    background: "#16a34a",
+    color: "white",
+  },})}}
                             className="cursor-pointer text-red-500"
                         />
-                        <span className='font-bold'>{item.quantity}</span>
+                        <span className="font-bold">{item.quantity}</span>
                         <SquarePlus
-                            onClick={() => dispatch(incrementQuantity(item))}
-                            
+                            onClick={() => {dispatch(incrementQuantity(item));toast.success("Increment By one",{style: {
+    background: "#16a34a",
+    color: "white",
+  },})}}
                             className="cursor-pointer text-red-500"
                         />
                     </div>
@@ -36,12 +54,15 @@ const CartCard = ({ item}) => {
             </div>
             <div className="cart-card__actions">
                 <Trash2
-          onClick={() => {  dispatch(removeFromCart(item.id)); alert(`${item.title} removed from cart!`)}}
-          
-          className="cursor-pointer text-red-500"
-        />
-                    
-                
+                    onClick={() => {
+                        dispatch(removeFromCart(item));
+                        toast.success("The Product Removed From Cart",{style: {
+    background: "#16a34a",
+    color: "white",
+  },})
+                    }}
+                    className="cursor-pointer text-red-500"
+                />
             </div>
         </Card>
     );
